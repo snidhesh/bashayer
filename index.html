@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bashayer by MODON — Waterfront Living on Hudayriyat Island</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1B2A4A; --navy-2:#243761; --sand:#B49A6A; --sand-l:#C9B48C;
+  --teal:#35708A; --cream:#F5F1E7; --ink:#20242c; --grey:#6b7280; --white:#fff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}
+h1,h2,h3,.serif{font-family:'Inter',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;font-weight:600;letter-spacing:-0.5px;line-height:1.12}
+img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.btn{display:inline-block;background:var(--sand);color:var(--navy);font-weight:600;text-transform:uppercase;letter-spacing:2px;font-size:.78rem;padding:16px 34px;border:none;border-radius:2px;cursor:pointer;text-decoration:none;transition:.25s}
+.btn:hover{background:var(--navy);color:#fff}
+.btn-outline{background:transparent;border:1px solid #fff;color:#fff}
+.btn-outline:hover{background:#fff;color:var(--navy)}
+.eyebrow{text-transform:uppercase;letter-spacing:4px;font-size:.72rem;color:var(--sand);font-weight:500}
+
+/* NAV */
+nav{position:absolute;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:22px 24px;max-width:1180px;margin:0 auto}
+.logo{height:56px;width:auto;display:block}
+.footer-logo{height:60px;width:auto;display:block;margin-bottom:6px}
+nav .btn{padding:12px 24px}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;
+  background:linear-gradient(180deg,rgba(27,42,74,.55),rgba(27,42,74,.35) 40%,rgba(27,42,74,.75)),
+  url('images/residences/pool-view.jpg') center/cover;
+  color:#fff}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;width:100%;align-items:center;padding:120px 0 60px}
+.hero h1{font-size:clamp(2.6rem,5.5vw,4.6rem);font-weight:600;margin:14px 0 10px}
+.hero .tagline{font-family:'Inter',sans-serif;font-style:italic;font-size:1.6rem;color:var(--sand-l);margin-bottom:22px}
+.hero p.lead{font-size:1.05rem;max-width:520px;font-weight:300;margin-bottom:28px}
+.hero .facts{display:flex;gap:30px;flex-wrap:wrap;margin-top:10px}
+.hero .facts div{border-left:2px solid var(--sand);padding-left:14px}
+.hero .facts b{font-family:'Inter',sans-serif;font-size:1.5rem;display:block}
+.hero .facts span{font-size:.72rem;letter-spacing:1px;text-transform:uppercase;opacity:.85}
+
+/* FORM CARD */
+.form-card{background:rgba(255,255,255,.97);color:var(--ink);border-radius:6px;padding:30px 28px;box-shadow:0 30px 60px rgba(0,0,0,.3)}
+.form-card h3{color:var(--navy);font-size:1.7rem;margin-bottom:4px}
+.form-card p.sub{font-size:.85rem;color:var(--grey);margin-bottom:18px}
+.form-card label{font-size:.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--navy);font-weight:600;display:block;margin:10px 0 4px}
+.form-card input,.form-card select{width:100%;padding:11px 12px;border:1px solid #d8d2c4;border-radius:3px;font-family:inherit;font-size:.9rem;background:#fdfcf9}
+.form-card input:focus,.form-card select:focus{outline:none;border-color:var(--teal)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form-card .btn{width:100%;margin-top:18px;text-align:center}
+.form-card .fine{font-size:.66rem;color:var(--grey);margin-top:10px;text-align:center}
+
+/* TRUST BAR */
+.trust{background:var(--navy);color:#fff;padding:20px 0}
+.trust .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;text-align:center}
+.trust div{flex:1;min-width:150px}
+.trust b{font-family:'Inter',sans-serif;font-size:1.35rem;color:var(--sand-l);display:block}
+.trust span{font-size:.72rem;letter-spacing:1px;text-transform:uppercase;opacity:.85}
+
+/* SECTION */
+section.pad{padding:88px 0}
+.sec-head{text-align:center;max-width:680px;margin:0 auto 50px}
+.sec-head h2{font-size:clamp(2rem,4vw,3rem);color:var(--navy);margin:10px 0}
+.sec-head p{color:var(--grey)}
+
+/* PRODUCTS */
+.products{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.pcard{background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 14px 40px rgba(27,42,74,.1);display:flex;flex-direction:column}
+.pcard .ph{height:280px;background-size:cover;background-position:center;position:relative}
+.pcard .ph span{position:absolute;bottom:14px;left:16px;background:var(--sand);color:var(--navy);font-size:.68rem;letter-spacing:1px;text-transform:uppercase;font-weight:600;padding:6px 12px;border-radius:2px}
+.pcard .pb{padding:26px 26px 30px;flex:1;display:flex;flex-direction:column}
+.pcard h3{font-size:1.9rem;color:var(--navy)}
+.pcard .price{color:var(--teal);font-weight:600;font-size:1.05rem;margin:2px 0 12px}
+.pcard ul{list-style:none;margin:0 0 20px}
+.pcard li{padding:6px 0;border-bottom:1px solid #eee;font-size:.9rem;color:#444;display:flex;justify-content:space-between}
+.pcard li span{color:var(--grey)}
+.pcard .btn{margin-top:auto;text-align:center}
+
+/* LOCATION */
+.location{background:var(--navy);color:#fff}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.loc-grid img{border-radius:6px}
+.loc-grid h2{color:#fff;font-size:clamp(2rem,4vw,2.8rem)}
+.mins{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
+.mins div{border-left:2px solid var(--sand);padding-left:14px}
+.mins b{font-family:'Inter',sans-serif;font-size:1.6rem;color:var(--sand-l);display:block}
+.mins span{font-size:.82rem;opacity:.85}
+
+/* AMENITIES */
+.amen-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.amen-grid figure{position:relative;height:200px;border-radius:6px;overflow:hidden}
+.amen-grid img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.amen-grid figure:hover img{transform:scale(1.06)}
+.amen-grid figcaption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(27,42,74,.85));color:#fff;padding:26px 14px 12px;font-size:.85rem;letter-spacing:1px}
+.amen-tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:28px}
+.amen-tags span{border:1px solid var(--sand);color:var(--navy);padding:8px 16px;border-radius:30px;font-size:.78rem;letter-spacing:1px}
+
+/* PAYMENT */
+.pay{background:var(--cream)}
+.timeline{display:flex;justify-content:space-between;gap:6px;flex-wrap:wrap;margin-top:40px}
+.tstep{flex:1;min-width:120px;text-align:center;position:relative;padding-top:34px}
+.tstep::before{content:'';position:absolute;top:14px;left:0;right:0;height:2px;background:var(--sand)}
+.tstep .dot{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:14px;height:14px;border-radius:50%;background:var(--navy);border:3px solid var(--sand)}
+.tstep b{font-family:'Inter',sans-serif;font-size:1.9rem;color:var(--teal);display:block}
+.tstep span{font-size:.78rem;color:var(--grey)}
+.split50{text-align:center;margin-top:34px;font-family:'Inter',sans-serif;font-size:1.5rem;color:var(--navy)}
+
+/* CTA BANNER */
+.cta-band{background:linear-gradient(rgba(27,42,74,.8),rgba(27,42,74,.8)),url('images/residences/aerial-view.jpg') center/cover;color:#fff;text-align:center;padding:96px 0}
+.cta-band h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:14px}
+.cta-band p{max-width:560px;margin:0 auto 26px;font-weight:300}
+
+/* FOOTER */
+footer{background:#0f1a30;color:#9aa6bd;padding:44px 0 30px;font-size:.82rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.disc{font-size:.68rem;opacity:.6;margin-top:20px;max-width:820px}
+
+/* STICKY MOBILE */
+.sticky{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--navy);padding:12px;z-index:40;gap:10px}
+.sticky a{flex:1;text-align:center}
+.wa{background:#25D366;color:#fff!important}
+
+@media(max-width:900px){
+  .hero-grid,.loc-grid{grid-template-columns:1fr}
+  .products{grid-template-columns:1fr}
+  .amen-grid{grid-template-columns:1fr 1fr}
+  .hero-grid{padding-top:96px}
+  nav .btn{display:none}
+  section.pad{padding:60px 0}
+  .sticky{display:flex}
+  body{padding-bottom:70px}
+}
+@media(max-width:520px){.amen-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="hero" id="top">
+  <nav>
+    <img src="assets/bashayer-logo-white.svg" class="logo" alt="Bashayer by MODON">
+    <a href="#register" class="btn">Register Interest</a>
+  </nav>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Now Launching · Hudayriyat Island, Abu Dhabi</div>
+        <h1>Waterfront living,<br>worlds apart.</h1>
+        <div class="tagline">Minutes away. Worlds apart.</div>
+        <p class="lead">A new waterfront community by MODON — elegant residences and private villas, moments from Sheikh Zayed Grand Mosque, ADGM and the airport. Homes on a 50/50 payment plan.</p>
+        <div class="facts">
+          <div><b>AED 2.35M</b><span>Starting price</span></div>
+          <div><b>50 / 50</b><span>Payment plan</span></div>
+          <div><b>2029</b><span>Handover</span></div>
+        </div>
+      </div>
+      <div class="form-card" id="register">
+        <h3>Register your interest</h3>
+        <p class="sub">Get pricing, floor plans &amp; priority access.</p>
+        <form id="lead-form" novalidate>
+          <label for="lf-name">Full name</label>
+          <input id="lf-name" name="name" type="text" required placeholder="Your name">
+          <div class="form-row">
+            <div><label for="lf-phone">Phone (WhatsApp)</label><input id="lf-phone" name="phone" type="tel" required placeholder="+971"></div>
+            <div><label for="lf-email">Email</label><input id="lf-email" name="email" type="email" required placeholder="you@email.com"></div>
+          </div>
+          <div class="form-row">
+            <div><label for="lf-interested">Interested in</label>
+              <select id="lf-interested" name="interested_in"><option>Residences</option><option>Villas</option><option>Both</option></select></div>
+            <div><label for="lf-purpose">Purpose</label>
+              <select id="lf-purpose" name="purpose"><option>To live in</option><option>Investment</option></select></div>
+          </div>
+          <label for="lf-budget">Budget</label>
+          <select id="lf-budget" name="budget"><option>Under AED 3M</option><option>AED 3–5M</option><option>AED 5–7M</option><option>AED 7M+</option></select>
+          <button class="btn" type="submit" id="lf-submit">Request Details</button>
+          <p id="lf-error" style="display:none;color:#b0352b;font-size:.82rem;text-align:center;margin-top:10px">Something went wrong — please try again in a moment.</p>
+          <p class="fine">By submitting you agree to be contacted by the Bashayer sales team.</p>
+        </form>
+        <div id="thanks" style="display:none;text-align:center;padding:30px 6px">
+          <h3 style="color:var(--teal)">Thank you</h3>
+          <p style="color:var(--grey);font-size:.9rem;margin-top:6px">Our team will contact you shortly with pricing and floor plans.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="trust">
+  <div class="wrap">
+    <div><b>By MODON</b><span>Master developer</span></div>
+    <div><b>Hudayriyat Island</b><span>Waterfront address</span></div>
+    <div><b>10% to reserve</b><span>50/50 payment plan</span></div>
+    <div><b>15 min</b><span>To Sheikh Zayed Mosque</span></div>
+  </div>
+</div>
+
+<section class="pad wrap">
+  <div class="sec-head">
+    <div class="eyebrow">The Collection</div>
+    <h2>Two ways to live on the water</h2>
+    <p>Choose an elegant waterfront apartment or a private villa in a gated community — both on Hudayriyat Island, both on a 50/50 plan.</p>
+  </div>
+  <div class="products">
+    <div class="pcard">
+      <div class="ph" style="background-image:url('images/residences/terrace-view-03.jpg')"><span>Residences</span></div>
+      <div class="pb">
+        <h3>Bashayer Residences</h3>
+        <div class="price">From AED 2.35M</div>
+        <ul>
+          <li>Homes <span>1–4 bedroom apartments</span></li>
+          <li>Sizes <span>81 – 468 sqm</span></li>
+          <li>Payment <span>50 / 50 · 10% down</span></li>
+          <li>Handover <span>October 2029</span></li>
+        </ul>
+        <a href="#register" class="btn">Enquire About Residences</a>
+      </div>
+    </div>
+    <div class="pcard">
+      <div class="ph" style="background-image:url('images/villas/villa-01.jpg')"><span>Villas</span></div>
+      <div class="pb">
+        <h3>Bashayer Villas</h3>
+        <div class="price">From AED 7.2M</div>
+        <ul>
+          <li>Homes <span>4 &amp; 5 bedroom villas</span></li>
+          <li>Sizes <span>365 – 590 sqm</span></li>
+          <li>Community <span>Gated · waterfront</span></li>
+          <li>Handover <span>March 2029</span></li>
+        </ul>
+        <a href="#register" class="btn">Enquire About Villas</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="location pad">
+  <div class="wrap loc-grid">
+    <img src="images/residences/semi-aerial-02.jpg" alt="Bashayer aerial view">
+    <div>
+      <div class="eyebrow">The Location</div>
+      <h2>Minutes from everything that matters</h2>
+      <p style="opacity:.9;margin-top:10px">Set on Hudayriyat Island, Bashayer places the calm of the waterfront within a short drive of the city, culture and commerce of Abu Dhabi.</p>
+      <div class="mins">
+        <div><b>15 min</b><span>Sheikh Zayed Grand Mosque</span></div>
+        <div><b>25 min</b><span>Abu Dhabi Global Market</span></div>
+        <div><b>25 min</b><span>Zayed Int'l Airport</span></div>
+        <div><b>30 min</b><span>Yas Island</span></div>
+        <div><b>35 min</b><span>Saadiyat Island</span></div>
+        <div><b>90 min</b><span>Downtown Dubai</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad wrap">
+  <div class="sec-head">
+    <div class="eyebrow">Amenities</div>
+    <h2>A resort at your doorstep</h2>
+    <p>Waterfront promenades, pools and world-class leisure — designed for everyday living.</p>
+  </div>
+  <div class="amen-grid">
+    <figure><img src="images/residences/pool-view.jpg" alt="Pool"><figcaption>Swimming Pools</figcaption></figure>
+    <figure><img src="images/residences/boardwalk.jpg" alt="Promenade"><figcaption>Waterfront Promenade</figcaption></figure>
+    <figure><img src="images/residences/plaza-view.jpg" alt="Plaza"><figcaption>Plaza &amp; Green Spaces</figcaption></figure>
+    <figure><img src="images/villas/villa-community.jpg" alt="Villa community"><figcaption>Gated Community</figcaption></figure>
+  </div>
+  <div class="amen-tags">
+    <span>Swimming Pool</span><span>Gym</span><span>Padel Courts</span><span>Multi-Sports Court</span>
+    <span>Cycling &amp; Jogging Trails</span><span>Children's Play Area</span><span>Community Centre</span><span>Parks &amp; Green Spaces</span>
+  </div>
+</section>
+
+<section class="pay pad wrap">
+  <div class="sec-head">
+    <div class="eyebrow">Payment Plan</div>
+    <h2>A simple 50 / 50 plan</h2>
+    <p>Reserve your home with just 10% and pay in stages through to handover in 2029.</p>
+  </div>
+  <div class="timeline">
+    <div class="tstep"><div class="dot"></div><b>10%</b><span>On reservation</span></div>
+    <div class="tstep"><div class="dot"></div><b>40%</b><span>During construction</span></div>
+    <div class="tstep"><div class="dot"></div><b>50%</b><span>On handover (2029)</span></div>
+  </div>
+  <div class="split50">Just 10% to secure your waterfront home.</div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--sand-l)">Limited Launch Release</div>
+    <h2>Be among the first at Bashayer</h2>
+    <p>Register now for priority access, pricing and floor plans before public release.</p>
+    <a href="#register" class="btn">Register Your Interest</a>
+    <a href="https://wa.me/9710000000000" class="btn btn-outline" style="margin-left:10px">Chat on WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <img src="assets/bashayer-logo-white.svg" class="footer-logo" alt="Bashayer by MODON">
+    </div>
+    <div>Hudayriyat Island, Abu Dhabi, UAE<br>modon.com · @modonproperties</div>
+  </div>
+  <div class="wrap"><p class="disc">Prices, sizes, dates and details are indicative and subject to change without notice. Renderings are artist's impressions for illustrative purposes only. This is a marketing communication and does not constitute an offer, contract or investment advice. E&amp;OE.</p></div>
+</footer>
+
+<div class="sticky">
+  <a href="#register" class="btn">Register Interest</a>
+  <a href="https://wa.me/9710000000000" class="btn wa">WhatsApp</a>
+</div>
+
+<script>
+(function(){
+  var form = document.getElementById('lead-form');
+  if (!form) return;
+  var submitBtn = document.getElementById('lf-submit');
+  var errorEl = document.getElementById('lf-error');
+  var thanksEl = document.getElementById('thanks');
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    errorEl.style.display = 'none';
+    submitBtn.disabled = true;
+    var originalLabel = submitBtn.textContent;
+    submitBtn.textContent = 'Sending…';
+
+    var payload = {
+      name: document.getElementById('lf-name').value.trim(),
+      phone: document.getElementById('lf-phone').value.trim(),
+      email: document.getElementById('lf-email').value.trim(),
+      interested_in: document.getElementById('lf-interested').value,
+      purpose: document.getElementById('lf-purpose').value,
+      budget: document.getElementById('lf-budget').value,
+    };
+
+    try {
+      var resp = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      if (!resp.ok) throw new Error('Bad status ' + resp.status);
+      form.style.display = 'none';
+      thanksEl.style.display = 'block';
+    } catch (err) {
+      console.error('Lead submit failed', err);
+      errorEl.style.display = 'block';
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalLabel;
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
