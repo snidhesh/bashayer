@@ -356,6 +356,9 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
         body: JSON.stringify(payload),
       });
       if (!resp.ok) throw new Error('Bad status ' + resp.status);
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', { send_to: 'AW-17699566934/jzfcCLLv1MwcENbq5_dB' });
+      }
       form.style.display = 'none';
       thanksEl.style.display = 'block';
     } catch (err) {
