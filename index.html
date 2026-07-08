@@ -357,7 +357,11 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
       });
       if (!resp.ok) throw new Error('Bad status ' + resp.status);
       if (typeof gtag === 'function') {
-        gtag('event', 'conversion', { send_to: 'AW-17699566934/jzfcCLLv1MwcENbq5_dB' });
+        gtag('event', 'conversion', {
+          send_to: 'AW-17699566934/jzfcCLLv1MwcENbq5_dB',
+          value: 1.0,
+          currency: 'AED'
+        });
       }
       form.style.display = 'none';
       thanksEl.style.display = 'block';
